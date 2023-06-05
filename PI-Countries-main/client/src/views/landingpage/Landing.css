@@ -1,0 +1,151 @@
+body{
+    
+    background-image: url(https://w0.peakpx.com/wallpaper/718/564/HD-wallpaper-world-map-world-countries-continents-map-blue.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;  
+   
+}
+
+
+.blur {
+  background: #02f8c32d;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  position: relative;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  justify-content: center;
+
+}
+container_btn{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  min-width: 100%;
+}
+
+
+.button {
+  position: relative;
+  padding: 15px 25px;
+  outline: none;
+  border: 1px solid #0bffd6;
+  background: #ebf6f4ef;
+  color: #0bffd6;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family:'Mouse Memoirs', sans-serif;
+  font-size: 20px;
+  overflow: hidden;
+  transition: 0.2s;
+  border-radius: 35%;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0.8;
+ }
+ 
+ .button:hover {
+  box-shadow: 0 0 10px #148472, 0 0 25px #22ddbe, 0 0 50px #4eecd2;
+  transition-delay: 0.6s;
+ }
+ 
+ .button span {
+  position: absolute;
+ }
+ 
+ .button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0bffd6);
+ }
+ 
+ .button:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.7s;
+ }
+ 
+ .button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3ff0d2);
+ }
+ 
+ .button:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.7s;
+  transition-delay: 0.35s;
+ }
+ 
+ .button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #25f0ce);
+ }
+ 
+ .button:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.7s;
+  transition-delay: 0.17s;
+ }
+ 
+ .button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #29e2c3);
+ }
+ 
+ .button:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.7s;
+  transition-delay: 0.52s;
+ }
+ 
+ .button:active {
+  background: #0bffd696;
+  background: linear-gradient(to top right, #0bffd6, #0bffff);
+  color: #000000;
+  box-shadow: 0 0 8px #0bffd6, 0 0 8px #1cf8d3, 0 0 8px #0bffeb;
+  transition: 0.1s;
+ }
+ 
+ .button:active span:nth-child(1) 
+ span:nth-child(2) 
+ span:nth-child(2) 
+ span:nth-child(2) {
+  transition: none;
+  transition-delay: none;
+ }
+ h1 {
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	background-clip: text;
+	text-transform: uppercase;
+	font-size: 120px;
+	margin: 20px 10px;
+  position: relative;
+  font-family: 'Rampart One', cursive;
+  filter: opacity(0.9);
+  transform: skew(2deg, 2deg);
+  padding: 5px;
+  justify-content: center;
+  display: flex;
+}
+

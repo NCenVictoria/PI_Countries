@@ -1,0 +1,17 @@
+.button {
+    position: relative;
+    padding: 0.5em 1em;
+    outline: none;
+    border: 1px solid #0bffd6;
+    background: #02f8c32d;
+    color: #0bffd6;
+   
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
