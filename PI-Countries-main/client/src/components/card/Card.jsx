@@ -15,7 +15,8 @@ export default function Card(props) {
       <div class='cont_text'>
       <div class='text'>
       <p>{props.name}</p>
-      <p>Continent:{props.continent}</p>
+      <p>Continent:</p>
+      <p>{props.continent}</p>
       </div>
       </div>
     </div>

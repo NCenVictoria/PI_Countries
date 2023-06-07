@@ -4,6 +4,7 @@ import{
     GET_BY_ID,
     GET_ACTIVITY,
     POST_ACTIVITY,
+    GET_COUNTRY_BY_ACTIVITY,
     ORDERS,
     FILTERS,
     NEXT_PAGE,
@@ -33,6 +34,12 @@ const rootReducer= (state=initialState,action)=>{
           return { ...state, activity: action.payload };
       case POST_ACTIVITY:
           return { ...state, activity:action.payload};
+      case GET_COUNTRY_BY_ACTIVITY:
+        console.log(action.payload)
+       
+          return{
+            ...state, filters:true,countriesFil:[...state.countries].filter(el=> el.Activities.map((e) => e.name).includes(action.payload))
+          }
       case ORDERS:
         if(action.payload==='alph_asc'){
           return {

@@ -5,6 +5,7 @@ export const GET_COUNTRY_BY_NAME = "GET_COUNTRY_BY_NAME";
 export const GET_BY_ID = "GET_BY_ID";
 export const GET_ACTIVITY = "GET_ACTIVITY";
 export const POST_ACTIVITY = "POST_ACTIVITY";
+export const GET_COUNTRY_BY_ACTIVITY = "GET_COUNTRY_BY_ACTIVITY";
 export const ORDERS = "ORDERS";
 export const FILTERS = "FILTERS";
 export const NEXT_PAGE = "NEXT_PAGE";
@@ -55,6 +56,12 @@ export const getCountryByName = (name) => {
       dispatch({ type: GET_ACTIVITY, payload: activities });
     };
   };
+  export const getCountryByActivity=(activity)=>{
+    console.log(activity, 'estoy en action')
+    return function(dispatch){
+      return dispatch({type: GET_COUNTRY_BY_ACTIVITY , payload:activity})
+    }
+  }
 
   export const order = (order) =>{
     return function(dispatch){

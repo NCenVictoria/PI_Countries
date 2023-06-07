@@ -2,11 +2,13 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import validate from './validate'
+import './Form.css'
 
 
 export default function Form() {
  
   const allCountries = useSelector(state => state.countries)
+  const [nameCountry,setNameCountry] = useState([])
   const [form, setForm] = useState({
     name:"",
     difficulty:"",
@@ -20,11 +22,15 @@ export default function Form() {
     duration:"",
     season:"",
     CountryId:[]
+
    })
   //  const [views,setViews]= useState({CountryId:[]})
   
+  const array=allCountries;
  const countriesHandler = (event) => {
-    
+   
+    console.log(array)
+    setNameCountry([...nameCountry,array.find(e=>e.id===event.target.value)])
     setForm({
       ...form,
       CountryId: [...form.CountryId, event.target.value],
@@ -52,8 +58,8 @@ export default function Form() {
     if(Object.keys(error).length){
       return alert('missing info')}
     axios.post("http://localhost:3001/activities",form)
-    .then(res=>alert(res))
-    .catch(error=>alert(error))
+    .then(res=>alert(res.data))
+    .catch(error=>alert(error.data))
     setForm({name:"",
     difficulty:"",
     duration:"",
@@ -63,51 +69,55 @@ export default function Form() {
   }
 
   return (
-  <form onSubmit={onSubmithandler}>
+  <form  onSubmit={onSubmithandler}>
+    <div className='container'>
+    <div class='cont_inputs'>
     <div>
-      <label >NAME</label>
-      <input type="text" value={form.name} onChange={onChangeHandler} name='name'/>
-      {error.name ? (<p>{error.name}</p>) : ""}
+      
+      <input class='inputs' placeholder='Enter New Avtivity...'type="text" value={form.name} onChange={onChangeHandler} name='name'/>
+      {error.name ? (<p class='errors'>{error.name}</p>) : ""}
     </div>
     <div>
-      <label htmlFor="">DIFFICULTY</label>
-      <select onChange={onChangeHandler} name='difficulty'>
-                            {["Seleccionar", 1, 2, 3, 4, 5].map(el => (
+      
+      <select class='inputs' onChange={onChangeHandler} name='difficulty'>
+                            {["DIFFICULTY", 1, 2, 3, 4, 5].map(el => (
                                 <option key={el} value={el}>{el}</option>
                             ))}
                         </select>
-                        {error.difficulty && (<p>{error.difficulty}</p>)}
+                        {error.difficulty && (<p class='errors'>{error.difficulty}</p>)}
     </div>
     <div>
-      <label htmlFor="">DURATION</label>
-      <select onChange={onChangeHandler} name='duration'>
-                            {["Select", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(el => (
+      
+      <select class='inputs' onChange={onChangeHandler} name='duration'>
+                            {["DURATION", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(el => (
                                 <option key={el} value={el}>{el} hrs</option>
                             ))}
                         </select>
-                        {error.duration && (<p>{error.duration}</p>)}
+                        {error.duration && (<p class='errors'>{error.duration}</p>)}
     </div>
     <div>
-      <label htmlFor="">SEASON</label>
-      <select onChange={onChangeHandler} name='season'>
-                            {["Select", "Verano", "Otoño", "Invierno", "Primavera"].map(el => (
+      
+      <select class='inputs' onChange={onChangeHandler} name='season'>
+                            {["SEASON", "Verano", "Otoño", "Invierno", "Primavera"].map(el => (
                                 <option key={el} value={el}>{el}</option>
                             ))}
                         </select>
-                        {error.season && (<p>{error.season}</p>)}
+                        {error.season && (<p class='errors'>{error.season}</p>)}
     </div>
-    <div>
-    <div>
-                        <label>COUNTRY/COUNTRIES</label>
+    
+      
+      <input class='button' type="reset" value="Restaurar"/>
+      </div>
+      <div>
+      <div class='cont_countries'>
+    
+                        <label></label>
                         
-                        <div><h5>{form.CountryId.map(e=><h7>{e}, </h7>)}</h5>
-                            <select name="countryId" onChange={countriesHandler}>
-                                <option name="Select">Select</option>
-                                <option name="Select all" value={allCountries.CountryId}>Select all</option>
-
-
+                        <div>
+                            <select class='inputs' name="countryId" onChange={countriesHandler}>
+                                <option name="Select">COUNTRY/COUNTRIES</option>
                                 {allCountries.map(country => 
-                                    <option key={country.id} name={country.name} value={country.id}>
+                                    <option key={country.name} name={country.name} value={country.id}>
                                         {country.name}
                                     </option>
                                 )
@@ -115,12 +125,14 @@ export default function Form() {
                             </select>
                           
                         </div>
-                        {error.CountryId && (<p>{error.CountryId}</p>)}
+                        {error.CountryId && (<p class='errors'>{error.CountryId}</p>)}
+                        <h5 class='add_countries'>selected: {nameCountry.map(e=><li>{e.name} </li>)}</h5>
                     </div>
-      
-    </div>
-      <button type='submit'>Create</button>
-    
+                    
+                    <button class='button' type='submit'>Create</button>
+      </div>
+     
+      </div>
     </form>
   )
 }

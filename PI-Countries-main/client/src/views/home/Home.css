@@ -1,5 +1,4 @@
 body{
-    background-image: url('./home.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -10,7 +9,20 @@ body{
     min-width: 100vw;
     
   }
+  .page{
+  
+  
+  color: #0bffd6;
  
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 20px;
+  overflow: hidden;
+  justify-items: left;
+  
+  
+  font-weight: bold;
+  }
   .container{
     display: flex;
     flex-direction: row;
@@ -20,38 +32,42 @@ body{
   
   .menu{
     padding: 7px;
-    border-radius: 10px;
+    border-radius: 50px;
     width: auto;
-    height: 600px;
+    height: auto;
     display: flex ;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 15px;
+   margin-top: 20px;
+   
+  }
+  .button {
+    position: relative;
+    padding: 0.5em 1em;
+    outline: none;
+    border: 1px solid #0bffd6;
+    background: #02f8c32d;
+    color: #0bffd6;
+   
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .searchbar{
+    margin-right: 90px;
+    float: right;
   }
   
-  .dogs{
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-  }
+ 
   
-  /* .paginated{
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    border:3px solid mediumspringgreen;
-  } */
-  /* .searchbar{
-    border: 2px solid rgb(0, 255, 170);
-  } */
+  
   @media screen and (max-width:1000px) {
-    .container_menu_dogs{
-      flex-direction: column;
-      width: 80%;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-    }
+    
     .nav {
       width: 75%;
     }
@@ -68,36 +84,7 @@ body{
     .dogs{
       width: 400px;
     }
-    .searchbar{
-      width: 80%;
-    }
+   
   }
   
-  @media screen and (max-width:715px) {
-    .container_menu_dogs{
-      flex-direction: column;
-      width: 98%;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-    }
-  
-    
-    .nav {
-      width: 75%;
-      gap: 60px;
-    }
-     .paginated{
-      width: 100%;
-    }
-    .menu{
-      height: auto;
-      width: 95%;
-    }
-    .dogs{
-      width: 98%;
-    }
-    .searchbar{
-      width: 98%;
-    }
-  }
+ 

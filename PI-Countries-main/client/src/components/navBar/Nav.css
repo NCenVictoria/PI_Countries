@@ -1,31 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Rampart+One&display=swap");
 
 .container {
-  background: linear-gradient(180deg, transparent, #256cf0);
-  width: 100%;
-  height: 100px;
+ 
+
   display:flex ;
   
 }
 
-.searchbar {
-  display: flex;
-  width: 28em;
-}
 
 
 
-.logo {
-  height: 120px;
-  filter: brightness(1.1);
-  mix-blend-mode: multiply;
-}
+
+
 
 .cont_btn {
-  margin: auto;
-  width: 1000px;
+  margin-top: 20px;
+  width: 640px;
   justify-content: space-between;
-  margin-bottom: 5rem;
+ 
   
 
 }
@@ -35,7 +27,7 @@
   padding: 0.5em 1em;
   outline: none;
   border: 1px solid #0bffd6;
-  background: #02f8c32d;
+  background-color: #1f6456b7;
   color: #0bffd6;
  
   text-transform: uppercase;

@@ -11,6 +11,7 @@ export default function Detail() {
   console.log("detalle de",id)
   useEffect(() => {
     // Se monta componente
+  
     dispatch(getCountryById(id));
     return dispatch(clean());
     
@@ -18,11 +19,12 @@ export default function Detail() {
   const detail = useSelector(state => state.detail);
   console.log(detail)
   return ( 
-            <div className=''>
-              <h3 class='text'>Country detail</h3>
+            <div >
+              
               {(detail)&&(
-                <div>
+                <div >
                     <img src={detail.image} alt="img no encontrada" />
+                    <div class='cont_text'>
                     <div class='text'>
                     <p>name: {detail.name}</p>
                     <p>capital: {detail.capital}</p>
@@ -32,6 +34,8 @@ export default function Detail() {
                     <p>area: {detail.area} Km2</p>
                     <p>Population: {detail.population} people</p>
                     </div>
+                    </div>
+                    
                 <h3>Actividades Turísticas</h3>
                 {detail.Activities?.length ? detail.Activities.map((Activity) => (
                     <div>

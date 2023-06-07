@@ -1,0 +1,30 @@
+.container{
+    
+    
+justify-content: flex-end;
+  }
+  .button {
+    
+    
+    outline: none;
+    border: 1px solid #0bffd6;
+    background: transparent;
+    color: #0bffd6;
+   
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .inputs {
+    background-color: #1f6456b7;
+    width: 440px;
+    height: 30px;
+    color: #81f0c5;
+    text-align: center;
+    font-size: 20px;
+  }

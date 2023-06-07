@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getCountryByName} from '../../redux/actions';
+import { getCountryByName, getCountries} from '../../redux/actions';
+import './search.css'
 
 export default function SearchBar() {
     const dispatch = useDispatch();
@@ -20,24 +21,32 @@ export default function SearchBar() {
         if(name){
             event.preventDefault();
         dispatch(getCountryByName(name))
-        setName(''); 
+        setName('');
+        
         }else
         return alert('enter name')
     }
+    function atras(event){
+        event.preventDefault();
+        dispatch(getCountries())
+    }
 
     return (
-        <div>
+        <div className='container'>
             <input
+                class='inputs'
                 type='text'
                 value={name}
                 placeholder='Buscar...'
                 onChange={handleInputChange}
             />
             <button
+                class='button'
                 type='submit'
                 onClick={handleSubmit}>
                 Search
             </button>
+            <button onClick={atras}>atras</button>
         </div>
     )
 }

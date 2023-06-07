@@ -10,7 +10,7 @@
 }
 .image{
     width: 100%;
-    height: 100%;
+    height: 120px;
     
     }
     .cont_text {
@@ -23,8 +23,8 @@
     .text {
         position: relative;
         padding: 0.5em 1em;
-        background: #02f8c32d;
-        color: #bad7d6;
+        
+        color: #07fbe2;
        
         text-transform: uppercase;
         letter-spacing: 2px;
