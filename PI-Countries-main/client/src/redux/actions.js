@@ -17,7 +17,7 @@ export const CLEAN = "CLEAN";
 
 export const getCountries = () => {
   return async function (dispatch) {
-    const bd = await axios.get("http://localhost:3001/countries");
+    const bd = await axios.get("/countries");
     const countries = bd.data;
     dispatch({ type: GET_COUNTRIES, payload: countries }); //despacha la action, no importo el hook porque acá no interesa, estamos en redux, el archivo que va a usar esta funcion sí tednrá que importar useDispatch
   };
@@ -26,7 +26,7 @@ export const getCountries = () => {
 //las actions creators no pueden devolver una peticion, por eso devuelvo otra funcion que sí podrá hacer la request.
 export const getCountryByName = (name) => {
     return async function (dispatch) {
-      const bd = await axios.get(`http://localhost:3001/countries?name=${name}`);
+      const bd = await axios.get(`/countries?name=${name}`);
       const country = bd.data
       dispatch({ type: GET_COUNTRY_BY_NAME, payload: country }); //despacha la action, no importo el hook porque acá no interesa, estamos en redux, el archivo que va a usar esta funcion sí tednrá que importar useDispatch
     };
@@ -34,7 +34,7 @@ export const getCountryByName = (name) => {
   
   export const postActivity = (form) => {
     return async function (dispatch) {
-      const bd = await axios.post("http://localhost:3001/activities",form);
+      const bd = await axios.post("/activities",form);
       const activity = bd.data
       dispatch({ type: POST_ACTIVITY, payload: activity });
     };
@@ -42,7 +42,7 @@ export const getCountryByName = (name) => {
   
   export const getCountryById = (id) => {
     return async function (dispatch) {
-      const bd = await axios.get(`http://localhost:3001/countries/${id}`);
+      const bd = await axios.get(`/countries/${id}`);
       const country = bd.data
       console.log("paso por action")
       dispatch({ type: GET_BY_ID, payload: country });
@@ -51,7 +51,7 @@ export const getCountryByName = (name) => {
   
   export const getActivities = () => {
     return async function (dispatch) {
-      const bd = await axios.get("http://localhost:3001/activities");
+      const bd = await axios.get("/activities");
       const activities = bd.data
       dispatch({ type: GET_ACTIVITY, payload: activities });
     };
