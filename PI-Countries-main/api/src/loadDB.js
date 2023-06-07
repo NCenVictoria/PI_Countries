@@ -18,8 +18,8 @@ const loadDB=async()=>{
         }
       })
       // console.log(loadInfo)
-      console.log('DB success')
       const countriesDB = await Country.bulkCreate(loadInfo)
+      console.log('DB success')
       
       
       return countriesDB;
@@ -28,6 +28,6 @@ const loadDB=async()=>{
     }
 }
 
-// loadDB();
+loadDB();
 
 module.exports= {loadDB}

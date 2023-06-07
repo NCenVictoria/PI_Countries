@@ -56,7 +56,7 @@ export default function Home() {
       <select class='button'name="" id="" onChange={activitiHandler} >
       <option  value="">Filter by Activity:</option>
       {console.log(allActivities)}
-      {allActivities?.map(activity => 
+      {allActivities.lenth && allActivities.map(activity => 
                                     <option  name={activity.name} value={activity.name}>
                                         {activity.name}
                                         {console.log(activity.name)}

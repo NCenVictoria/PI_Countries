@@ -1,6 +1,6 @@
 const {Country,Activity}= require('../../db');
 const {loadDB}= require('../../loadDB');
-loadDB();
+// loadDB();
 
 const allCountries = async ()=> await Country.findAll({
     include: {
