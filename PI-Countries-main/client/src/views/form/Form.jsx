@@ -7,7 +7,8 @@ import './Form.css'
 
 export default function Form() {
  
-  const allCountries = useSelector(state => state.countries)
+  const  allCountries = useSelector(state => state.countries)
+  const activities = useSelector(state=>state.activity)
   const [nameCountry,setNameCountry] = useState([])
   const [form, setForm] = useState({
     name:"",
@@ -57,6 +58,8 @@ export default function Form() {
     console.log(form)
     if(Object.keys(error).length){
       return alert('missing info')}
+      console.log(activities)
+    if(activities.find(e=>e.name===form.name))  return alert('activity already exist')
     axios.post("http://localhost:3001/activities",form)
     .then(res=>alert(res.data))
     .catch(error=>alert(error.data))
@@ -65,6 +68,7 @@ export default function Form() {
     duration:"",
     season:"",
     CountryId:[]})
+    
     
   }
 
@@ -106,7 +110,7 @@ export default function Form() {
     </div>
     
       
-      <input class='button' type="reset" value="Restaurar"/>
+      <input class='button_reset' type="reset" value="Reset"/>
       </div>
       <div>
       <div class='cont_countries'>

@@ -1,3 +1,10 @@
+.cont_detail {
+  margin-top: 20px;
+  border: 2px solid red;
+  height: 220px;
+  overflow: auto;
+  display: flex;
+}
 .cont_text {
   background: #d1e3e02d;
     
@@ -5,6 +12,10 @@
     
   
   }
+ .img{
+
+  float:left;
+ }
 
 .text {
    background-color:#252d3b63; ;

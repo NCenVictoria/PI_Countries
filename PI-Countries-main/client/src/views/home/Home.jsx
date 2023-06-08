@@ -41,11 +41,11 @@ export default function Home() {
 
   return (
     <div className='body'>
-    <div class='searchbar'><SearchBar/></div>
-    <div class='menu'>
+    <div className='searchbar'><SearchBar/></div>
+    <div className='menu'>
    
       
-      <select class='button'onChange={orderHandler} name="" id="">
+      <select className='button'onChange={orderHandler} name="" id="">
         <option  value=""selected='selected'>ORDER BY:</option>
         <option value="alph_asc">alph_asc</option>
         <option value="alph_dec">alph_dec</option>
@@ -53,19 +53,20 @@ export default function Home() {
         <option value="population_dec">population_dec</option>
       </select>
       
-      <select class='button'name="" id="" onChange={activitiHandler} >
+      <select className='button'name="" id="" onChange={activitiHandler} >
       <option  value="">Filter by Activity:</option>
       {console.log(allActivities)}
-      {allActivities.lenth && allActivities.map(activity => 
-                                    <option  name={activity.name} value={activity.name}>
+      {
+      allActivities?.map(activity => 
+                                    <option  key={activity.id} value={activity.name}>
                                         {activity.name}
-                                        {console.log(activity.name)}
                                     </option>
                                 )
-                                }
+                              }
+                              
       </select>
-       
-      <select class='button' name="" id="" onChange={filterHandler}>
+      {console.log(allActivities)}
+      <select className='button' name="" id="" onChange={filterHandler}>
         <option value="">Filter by Continent:</option>
         <option value="asia">ASIA</option>
         <option value="america">AMERICAS</option>
@@ -76,7 +77,7 @@ export default function Home() {
  </select>
  </div>
  <Cards />
- <h4 class='page'>Page {page}</h4>
+ <h4 className='page'>Page {page}</h4>
  <Paginated></Paginated>
  
   </div>

@@ -10,6 +10,7 @@ export const ORDERS = "ORDERS";
 export const FILTERS = "FILTERS";
 export const NEXT_PAGE = "NEXT_PAGE";
 export const CLEAN = "CLEAN";
+export const FILTERS_FALSE = "FILTERS_FALSE"
 
 
 
@@ -74,9 +75,15 @@ export const getCountryByName = (name) => {
     return function  (dispatch){
       return dispatch({type: FILTERS,payload:filter})
     }
+  }
+    export const filtersFalse= ()=>{
+      return{
+        type: FILTERS_FALSE
+      }
+    }
       
     
-  }
+  
   export const nextPage = (page) =>{
     console.log(page)
     return function  (dispatch){

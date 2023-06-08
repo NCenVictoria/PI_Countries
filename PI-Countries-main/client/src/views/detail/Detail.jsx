@@ -19,11 +19,13 @@ export default function Detail() {
   const detail = useSelector(state => state.detail);
   console.log(detail)
   return ( 
-            <div >
+            <div className='cont_detail'>
               
               {(detail)&&(
-                <div >
-                    <img src={detail.image} alt="img no encontrada" />
+                <div className='cont_detail'>
+                  <div class='img'>
+                    <img src={detail.image} alt="img not found" />
+                    </div>
                     <div class='cont_text'>
                     <div class='text'>
                     <p>name: {detail.name}</p>
@@ -35,20 +37,19 @@ export default function Detail() {
                     <p>Population: {detail.population} people</p>
                     </div>
                     </div>
-                    
-                <h3>Actividades Turísticas</h3>
+                    <div class='cont_text'>
+                <h3 class='text'> - activities -</h3>
                 {detail.Activities?.length ? detail.Activities.map((Activity) => (
-                    <div>
+                    <div class='text'>
                         <h4>
                             {" "}
-                            {Activity.name.charAt(0).toUpperCase() +
-                                Activity.name.slice(1).toLowerCase()}
+                            {Activity.name}
                         </h4>
-                        <p>Dificultad: {Activity.difficulty}</p>
-                        <p>Duración: {Activity.duration} horas</p>
-                        <p>Temporada: {Activity.season}</p>
+                        <p>Dificulty: {Activity.difficulty}</p>
+                        <p>Duration: {Activity.duration} horas</p>
+                        <p>season: {Activity.season}</p>
                     </div>
-                )) : <p>Este País aún no tiene actividades turísticas asignadas</p>}
+                )) : <p class='text'>This country has no assigned activities</p>}</div> 
                 </div>
                 )}
                 </div>

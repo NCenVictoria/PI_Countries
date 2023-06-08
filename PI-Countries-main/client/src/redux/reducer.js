@@ -8,7 +8,8 @@ import{
     ORDERS,
     FILTERS,
     NEXT_PAGE,
-    CLEAN
+    CLEAN,
+    FILTERS_FALSE
   } from './actions'
 
 const initialState = {
@@ -26,6 +27,9 @@ const rootReducer= (state=initialState,action)=>{
     case GET_COUNTRIES:
         return {...state,countries:action.payload}
       case GET_COUNTRY_BY_NAME:
+        console.log (action.payload)
+          if(action.payload==='not found')
+          return {...state}
           return { ...state, countries: action.payload };
     
       case GET_BY_ID:
@@ -112,7 +116,10 @@ const rootReducer= (state=initialState,action)=>{
     }
     return{...state,filters:false} 
     
-    
+    case FILTERS_FALSE:
+        return{
+            ...state,filters:false,page:1
+        }
         
       case CLEAN:
           return{
