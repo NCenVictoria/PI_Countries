@@ -55,17 +55,17 @@ export default function Home() {
       
       <select className='button'name="" id="" onChange={activitiHandler} >
       <option  value="">Filter by Activity:</option>
-      {console.log(allActivities)}
+      
       {
-      allActivities?.map(activity => 
-                                    <option  key={activity.id} value={activity.name}>
-                                        {activity.name}
-                                    </option>
-                                )
+      // (allActivities.length>1) && allActivities?.map(activity => 
+      //                               <option  key={activity.id} value={activity.name}>
+      //                                   {activity.name}
+      //                               </option>
+      //                           )
                               }
                               
       </select>
-      {console.log(allActivities)}
+      
       <select className='button' name="" id="" onChange={filterHandler}>
         <option value="">Filter by Continent:</option>
         <option value="asia">ASIA</option>
